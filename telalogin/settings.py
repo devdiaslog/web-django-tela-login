@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -121,3 +122,11 @@ SESSION_COOKIE_AGE = 60 * 5 # Cinco Minutos
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Django Messages
+MESSAGE_TAGS = {
+  constants.DEBUG:'alert-primary',
+  constants.ERROR:'alert-danger',
+  constants.INFO:'alert-info',
+  constants.WARNING:'alert-warning',
+  constants.SUCCESS:'alert-success',
+}

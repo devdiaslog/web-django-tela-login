@@ -5,35 +5,23 @@
 {% block body %}
   <div class="container">
     <div class="row mt-4">
-    {% if status == '0' %}
-    <div class="alert alert-danger" role="alert">
-      Nome e e-mail devem ser preenchidos.
-    </div>
-    {% endif %}
-    {% if status == '1' %}
-    <div class="alert alert-danger" role="alert">
-      A senha deve conter pelo 8 dígitos.
-    </div>
-    {% endif %}
-    {% if status == '2' %}
-    <div class="alert alert-secondary" role="alert">
-      Usuário já cadastrado.
-    </div>
-    {% endif %}
-    {% if status == '3' %}
-    <div class="alert alert-success" role="alert">
-      Usuário cadastrado com sucesso
-    </div>
-    {% endif %}
-    {% if status == '4' %}
-    <div class="alert alert-danger" role="alert">
-      Erro interno do servidor
-    </div>
-    {% endif %}
 
-      
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }}" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    
         <div class="col-md-3">
         </div>
+
+    
+
+    
+
+
 
         <div class="col-md mt-4">
           <h1>Cadastra-se</h1>
