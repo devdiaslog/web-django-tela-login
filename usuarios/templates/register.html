@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Cadastra-se{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="row mt-4">
+    {% if status == '0' %}
+    <div class="alert alert-danger" role="alert">
+      Nome e e-mail devem ser preenchidos.
+    </div>
+    {% endif %}
+    {% if status == '1' %}
+    <div class="alert alert-danger" role="alert">
+      A senha deve conter pelo 8 dígitos.
+    </div>
+    {% endif %}
+    {% if status == '2' %}
+    <div class="alert alert-secondary" role="alert">
+      Usuário já cadastrado.
+    </div>
+    {% endif %}
+    {% if status == '3' %}
+    <div class="alert alert-success" role="alert">
+      Usuário cadastrado com sucesso
+    </div>
+    {% endif %}
+    {% if status == '4' %}
+    <div class="alert alert-danger" role="alert">
+      Erro interno do servidor
+    </div>
+    {% endif %}
+
+      
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md mt-4">
+          <h1>Cadastra-se</h1>
+          <hr>
+          <form method="post" action="{% url 'validar_register' %}">{% csrf_token %}
+            <div class="mt-4">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" name="nome" id="nome">
+            </div>
+            <div class="mt-4">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="mt-4">
+              <label for="senha" class="form-label">Senha</label>
+              <input type="password" class="form-control" name="senha" id="senha">
+            </div>
+
+            <button type="submit" class="btn btn-success mt-4">Cadastrar</button>
+            <a href="{% url 'login' %}" class="btn btn-info mt-4">Login</a>
+          </form>
+        </div>
+        <div class="col-md-3 mt-4">
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
