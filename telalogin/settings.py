@@ -130,3 +130,5 @@ MESSAGE_TAGS = {
   constants.WARNING:'alert-warning',
   constants.SUCCESS:'alert-success',
 }
+
+AUTH_USER_MODEL = "usuarios.Usuario"

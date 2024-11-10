@@ -22,8 +22,8 @@
           <hr>
           <form method="post" action="{% url 'validar_login' %}">{% csrf_token %}
             <div class="mt-4">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" id="email">
+              <label for="nome" class="form-label">Nome:</label>
+              <input type="text" class="form-control" name="nome" id="nome">
             </div>
             <div class="mt-4">
               <label for="senha" class="form-label">Senha</label>

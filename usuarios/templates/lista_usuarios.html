@@ -25,16 +25,20 @@
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Matricula</th>
           <th scope="col">Nome</th>
           <th scope="col">E-mail</th>
+          <th scope="col">Setor</th>
         </tr>
       </thead>
       <tbody>
       {% for usuario in usuarios %}
         <tr>
           <th scope="row">{{ usuario.id }}</th>
-          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.matricula }}</td>
+          <td>{{ usuario.username }}</td>
           <td>{{ usuario.email }}</td>
+          <td>{{ usuario.setor }}</td>
         </tr>
       {% endfor %}
 

@@ -17,28 +17,38 @@
         <div class="col-md-3">
         </div>
 
-    
-
-    
-
-
-
         <div class="col-md mt-4">
           <h1>Cadastra-se</h1>
           <hr>
           <form method="post" action="{% url 'validar_register' %}">{% csrf_token %}
             <div class="mt-4">
-              <label for="nome" class="form-label">Nome</label>
+              <label for="nome" class="form-label">Nome:</label>
               <input type="text" class="form-control" name="nome" id="nome">
             </div>
             <div class="mt-4">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label">Email:</label>
               <input type="email" class="form-control" name="email" id="email">
             </div>
             <div class="mt-4">
-              <label for="senha" class="form-label">Senha</label>
+              <label for="senha" class="form-label">Senha:</label>
               <input type="password" class="form-control" name="senha" id="senha">
             </div>
+            <hr>
+            <p>Dados Adicionais:</p>
+            <div class="mt-4">
+              <label for="matricula" class="form-label">Matricula:</label>
+              <input type="text" class="form-control" name="matricula" id="matricula">
+            </div>
+
+            <div class="mt-4">
+              <label for="setor" class="form-label">Setor:</label>
+              <input type="text" class="form-control" name="setor" id="setor">
+            </div>
+
+
+
+
+
 
             <button type="submit" class="btn btn-success mt-4">Cadastrar</button>
             <a href="{% url 'login' %}" class="btn btn-info mt-4">Login</a>
